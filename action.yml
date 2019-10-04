@@ -1,12 +1,20 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
-inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+name: 'Repository Dispatch'
+description: 'Generate a repository dispatch event'
+author: 'Defold'
+inputs:
+  owner:
+    description: 'Repository owner'
+  repo:
+    description: 'Repository name'
+  token:
+    description: 'GitHub authorization token'
+  action:
+    description: "Event action"
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.myInput }}
+    - ${{ inputs.owner }}
+    - ${{ inputs.repo }}
+    - ${{ inputs.token }}
+    - ${{ inputs.action }}
