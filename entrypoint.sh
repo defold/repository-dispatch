@@ -18,6 +18,8 @@ if [ -z "${USER}" ]; then
 	exit 1
 fi
 
+echo "curl -u '${USER}:${TOKEN}' -X POST https://api.github.com/repos/${REPO}/dispatches -H 'Accept: application/vnd.github.everest-preview+json' --data '{\"event_type\": \"${ACTION}\"}'"
+
 curl -u "${USER}:${TOKEN}" -X POST https://api.github.com/repos/${REPO}/dispatches \
 -H 'Accept: application/vnd.github.everest-preview+json' \
 --data '{"event_type": "${ACTION}"}'
