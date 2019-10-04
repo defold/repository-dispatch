@@ -2,19 +2,19 @@ name: 'Repository Dispatch'
 description: 'Generate a repository dispatch event'
 author: 'Defold'
 inputs:
-  owner:
-    description: 'Repository owner'
-  repo:
-    description: 'Repository name'
-  token:
-    description: 'GitHub authorization token'
-  action:
-    description: "Event action"
+    repo:
+        description: 'Repository to dispatch event to'
+    token:
+        description: 'GitHub authorization token'
+    user:
+        description: 'GitHub user to which the authentication token belongs'
+    action:
+        description: "Event action"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.owner }}
-    - ${{ inputs.repo }}
-    - ${{ inputs.token }}
-    - ${{ inputs.action }}
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+        - ${{ inputs.repo }}
+        - ${{ inputs.token }}
+        - ${{ inputs.user }}
+        - ${{ inputs.action }}
