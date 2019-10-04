@@ -1,6 +1,10 @@
 # Generate a repository dispatch event
 
-Dispatch a repository event
+Dispatch a repository event.
+
+* https://help.github.com/en/articles/events-that-trigger-workflows#external-events-repository_dispatch
+* https://developer.github.com/v3/activity/events/types/#repositorydispatchevent
+* https://developer.github.com/v3/repos/#create-a-repository-dispatch-event
 
 ## Usage 
 
